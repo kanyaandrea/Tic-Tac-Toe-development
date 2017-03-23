@@ -120,20 +120,16 @@ def main():
     turn = choose_first() 
     game_on = True
     the_board = [" "] * 10
-
     while game_on is True:
-
         if turn == player_names[0]: 
             display_board(the_board)
             print(player_names[0], ":")
             position = player_choice(the_board)
             place_marker(the_board, position, player_marker_choice[0])
-
             if win_check(the_board, player_marker_choice[0]) is True:
                 display_board(the_board)
                 print("Congratulation " + player_names[0] + "!!! You won the game!")
                 game_on = False
-
             else:
                 if full_board_check(the_board):
                     display_board(the_board)
@@ -141,7 +137,6 @@ def main():
                     break
                 else:
                     turn = player_names[1]
-
         else:
             turn = player_names[1]
             display_board(the_board)
@@ -153,21 +148,20 @@ def main():
                 display_board(the_board)
                 print("Congratulation " + player_names[1] + "!!! You won the game!")
                 game_on = False
-
             else:
                 if full_board_check(the_board):
                     display_board(the_board)
                     print("This game is draw!")
                     break
-
                 else:
                     turn = player_names[0]
 
+
 welcome_screen()
+player_names = ask_player_name()  
+player_marker_choice = player_input() 
 new_game = "y"
 while new_game == "y":
-    player_names = ask_player_name()  
-    player_marker_choice = player_input() 
     main()
     new_game = input("Do you want to play a new game? (write y to continue, or press any key to exit)" )
 exit()
