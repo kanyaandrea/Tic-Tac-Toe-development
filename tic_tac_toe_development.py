@@ -42,7 +42,7 @@ def player_input():
 
 
 def display_board(board):
-    os.system('clear')  # Ezzel a paranccsal tudjuk torolni a kepernyot.
+    os.system('clear') 
     print("\n"*2)
     print(("    |     |    ").center(50, " "))
     print((" " + board[7] + "  |  " + board[8] + "  |  " + board[9] + " ").center(50, " "))
@@ -116,18 +116,14 @@ def player_choice(board):
     return int(position)
 
 
-def replay():
-    return ("Do you want to play again? Y/N  ".upper().startswith("Y"))
-
-
 def main():
-    turn = choose_first()  # Ez a valtozo egy string amely a kezdo jatekos nevet tartalmazza.
+    turn = choose_first() 
     game_on = True
     the_board = [" "] * 10
 
     while game_on is True:
 
-        if turn == player_names[0]:  # A lista 0. eleme az elso jatekos nevet tartalmazza.
+        if turn == player_names[0]: 
             display_board(the_board)
             print(player_names[0], ":")
             position = player_choice(the_board)
@@ -167,12 +163,12 @@ def main():
                 else:
                     turn = player_names[0]
 
-
+welcome_screen()
 new_game = "y"
 while new_game == "y":
-    welcome_screen()
-    player_names = ask_player_name()  # Ez a valtozo egy lista ami mindket jatekos nevet tartalmazza.
-    player_marker_choice = player_input()  # Ez a valtozo 1 ket elemes tuple, ami tartalmazza a jatekosok markeret.
+    player_names = ask_player_name()  
+    player_marker_choice = player_input() 
     main()
     new_game = input("Do you want to play a new game? (write y to continue, or press any key to exit)" )
 exit()
+
