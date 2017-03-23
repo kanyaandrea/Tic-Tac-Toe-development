@@ -26,7 +26,6 @@ def welcome_screen():
     print("        ║ ╦╠═╣║║║║╣          ")
     print("        ╚═╝╩ ╩╩ ╩╚═╝         ")
     print("\n\n\n")
-    # time.sleep(1)
     input("Press Enter to continue...")
 
 
